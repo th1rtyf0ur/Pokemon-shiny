@@ -121,7 +121,7 @@ let pms = [
     "isotope": "_05",
     "name": {
       "de": "Schiggy",
-      "en": "Squirtle",
+      "en": "Squirtle (squad)",
       "fr": "Carapuce",
       "jp": "ゼニガメ",
       "kr": "꼬부기",
@@ -134,7 +134,7 @@ let pms = [
     "dex": 8,
     "name": {
       "de": "Schillok",
-      "en": "Wartortle",
+      "en": "Wartortle (squad)",
       "fr": "Carabaffe",
       "jp": "カメール",
       "kr": "어니부기",
@@ -148,7 +148,7 @@ let pms = [
     "dex": 9,
     "name": {
       "de": "Turtok",
-      "en": "Blastoise",
+      "en": "Blastoise (squad)",
       "fr": "Tortank",
       "jp": "カメックス",
       "kr": "거북왕",
@@ -384,7 +384,7 @@ let pms = [
     "isotope": "_02",
     "name": {
       "de": "Pikachu",
-      "en": "Pikachu",
+      "en": "Pikachu (Party hat)",
       "fr": "Pikachu",
       "jp": "ピカチュウ",
       "kr": "피카츄",
@@ -397,7 +397,7 @@ let pms = [
     "dex": 26,
     "name": {
       "de": "Raichu",
-      "en": "Raichu",
+      "en": "Raichu (Party hat)",
       "fr": "Raichu",
       "jp": "ライチュウ",
       "kr": "라이츄",
@@ -412,7 +412,7 @@ let pms = [
     "isotope": "_03",
     "name": {
       "de": "Pikachu",
-      "en": "Pikachu",
+      "en": "Pikachu (Ash hat)",
       "fr": "Pikachu",
       "jp": "ピカチュウ",
       "kr": "피카츄",
@@ -426,7 +426,7 @@ let pms = [
     "isotope": "_03",
     "name": {
       "de": "Raichu",
-      "en": "Raichu",
+      "en": "Raichu (Ash hat)",
       "fr": "Raichu",
       "jp": "ライチュウ",
       "kr": "라이츄",
@@ -440,7 +440,7 @@ let pms = [
     "isotope": "_06",
     "name": {
       "de": "Pikachu",
-      "en": "Pikachu",
+      "en": "Pikachu (Fragment hat)",
       "fr": "Pikachu",
       "jp": "ピカチュウ",
       "kr": "피카츄",
@@ -453,7 +453,7 @@ let pms = [
     "dex": 26,
     "name": {
       "de": "Raichu",
-      "en": "Raichu",
+      "en": "Raichu (Fragment hat)",
       "fr": "Raichu",
       "jp": "ライチュウ",
       "kr": "라이츄",
@@ -468,7 +468,7 @@ let pms = [
     "isotope": "_04",
     "name": {
       "de": "Pikachu",
-      "en": "Pikachu",
+      "en": "Pikachu (Witch hat)",
       "fr": "Pikachu",
       "jp": "ピカチュウ",
       "kr": "피카츄",
@@ -481,7 +481,7 @@ let pms = [
     "dex": 26,
     "name": {
       "de": "Raichu",
-      "en": "Raichu",
+      "en": "Raichu (Witch hat)",
       "fr": "Raichu",
       "jp": "ライチュウ",
       "kr": "라이츄",
@@ -496,7 +496,7 @@ let pms = [
     "isotope": "_01",
     "name": {
       "de": "Pikachu",
-      "en": "Pikachu",
+      "en": "Pikachu (Santa hat)",
       "fr": "Pikachu",
       "jp": "ピカチュウ",
       "kr": "피카츄",
@@ -510,7 +510,7 @@ let pms = [
     "isotope": "_01",
     "name": {
       "de": "Raichu",
-      "en": "Raichu",
+      "en": "Raichu (Santa hat)",
       "fr": "Raichu",
       "jp": "ライチュウ",
       "kr": "라이츄",
@@ -524,7 +524,7 @@ let pms = [
     "isotope": "_07",
     "name": {
       "de": "Pikachu",
-      "en": "Pikachu",
+      "en": "Pikachu (flower)",
       "fr": "Pikachu",
       "jp": "ピカチュウ",
       "kr": "피카츄",
@@ -538,7 +538,7 @@ let pms = [
     "isotope": "_07",
     "name": {
       "de": "Raichu",
-      "en": "Raichu",
+      "en": "Raichu (flower)",
       "fr": "Raichu",
       "jp": "ライチュウ",
       "kr": "라이츄",
@@ -551,7 +551,7 @@ let pms = [
     "dex": 26,
     "name": {
       "de": "Raichu",
-      "en": "Raichu",
+      "en": "Raichu (Alolan)",
       "fr": "Raichu",
       "jp": "ライチュウ",
       "kr": "라이츄",
@@ -1568,7 +1568,7 @@ let pms = [
     "dex": 103,
     "name": {
       "de": "Kokowei",
-      "en": "Exeggutor",
+      "en": "Exeggutor (Alolan)",
       "fr": "Noadkoko",
       "jp": "ナッシー",
       "kr": "나시",
@@ -1608,7 +1608,7 @@ let pms = [
     "dex": 105,
     "name": {
       "de": "Knogga",
-      "en": "Marowak",
+      "en": "Marowak (Alolan)",
       "fr": "Ossatueur",
       "jp": "ガラガラ",
       "kr": "텅구리",
@@ -1986,9 +1986,9 @@ let pms = [
     "dex": 133,
     "name": {
       "de": "Evoli",
-      "en": "Eevee",
+      "en": "Eevee (flower)",
       "fr": "Évoli",
-      "jp": "イーブイ",
+      "jp": "イーブイ（花）",
       "kr": "이브이",
       "zh": "伊布"
     },
@@ -2013,9 +2013,9 @@ let pms = [
     "dex": 134,
     "name": {
       "de": "Aquana",
-      "en": "Vaporeon",
+      "en": "Vaporeon (flower)",
       "fr": "Aquali",
-      "jp": "シャワーズ",
+      "jp": "シャワーズ（花）",
       "kr": "샤미드",
       "zh": "水伊布"
     },
@@ -2040,9 +2040,9 @@ let pms = [
     "dex": 135,
     "name": {
       "de": "Blitza",
-      "en": "Jolteon",
+      "en": "Jolteon (flower)",
       "fr": "Voltali",
-      "jp": "サンダース",
+      "jp": "サンダース（花）",
       "kr": "쥬피썬더",
       "zh": "雷伊布"
     },
@@ -2067,9 +2067,9 @@ let pms = [
     "dex": 136,
     "name": {
       "de": "Flamara",
-      "en": "Flareon",
+      "en": "Flareon (flower)",
       "fr": "Pyroli",
-      "jp": "ブースター",
+      "jp": "ブースター（花）",
       "kr": "부스터",
       "zh": "火伊布"
     },
@@ -2550,7 +2550,7 @@ let pms = [
     "dex": 172,
     "name": {
       "de": "Pichu",
-      "en": "Pichu",
+      "en": "Pichu (Party hat)",
       "fr": "Pichu",
       "jp": "ピチュー",
       "kr": "피츄",
@@ -2565,7 +2565,7 @@ let pms = [
     "dex": 172,
     "name": {
       "de": "Pichu",
-      "en": "Pichu",
+      "en": "Pichu (Witch hat)",
       "fr": "Pichu",
       "jp": "ピチュー",
       "kr": "피츄",
@@ -2580,7 +2580,7 @@ let pms = [
     "dex": 172,
     "name": {
       "de": "Pichu",
-      "en": "Pichu",
+      "en": "Pichu (Santa hat)",
       "fr": "Pichu",
       "jp": "ピチュー",
       "kr": "피츄",
@@ -2909,9 +2909,9 @@ let pms = [
     "dex": 196,
     "name": {
       "de": "Psiana",
-      "en": "Espeon",
+      "en": "Espeon (flower)",
       "fr": "Mentali",
-      "jp": "エーフィ",
+      "jp": "エーフィ（花）",
       "kr": "에브이",
       "zh": "太陽伊布"
     },
@@ -2936,9 +2936,9 @@ let pms = [
     "dex": 197,
     "name": {
       "de": "Nachtara",
-      "en": "Umbreon",
+      "en": "Umbreon (flower)",
       "fr": "Noctali",
-      "jp": "ブラッキー",
+      "jp": "ブラッキー（花）",
       "kr": "블래키",
       "zh": "月亮伊布"
     },
@@ -6520,9 +6520,9 @@ let pms = [
     "dex": 470,
     "name": {
       "de": "Folipurba",
-      "en": "Leafeon",
+      "en": "Leafeon (flower)",
       "fr": "Phyllali",
-      "jp": "リーフィア",
+      "jp": "リーフィア（花）",
       "kr": "리피아",
       "zh": "葉伊布"
     },
@@ -6547,9 +6547,9 @@ let pms = [
     "dex": 471,
     "name": {
       "de": "Glaziola",
-      "en": "Glaceon",
+      "en": "Glaceon (flower)",
       "fr": "Givrali",
-      "jp": "グレイシア",
+      "jp": "グレイシア（花）",
       "kr": "글레이시아",
       "zh": "冰伊布"
     },
