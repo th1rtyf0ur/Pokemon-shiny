@@ -3742,6 +3742,7 @@ let pms = [
       "zh": "水躍魚"
     },
     "shiny_released": false,
+    "released_date": '2019-07-21',
     "family": "Mudkip"
   },
   {
@@ -3755,6 +3756,7 @@ let pms = [
       "zh": "沼躍魚"
     },
     "shiny_released": false,
+    "released_date": '2019-07-21',
     "family": "Mudkip"
   },
   {
@@ -3768,6 +3770,7 @@ let pms = [
       "zh": "巨沼怪"
     },
     "shiny_released": false,
+    "released_date": '2019-07-21',
     "family": "Mudkip"
   },
   {
