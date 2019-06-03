@@ -23,6 +23,12 @@ let l10n = {
     "de": "Show: ",
     "it": "Mostra: ",
   },
+  "toggle": {
+    "en": "Toggle: ",
+    "zh": "顯示: ",
+    "de": "Show: ",
+    "it": "Mostra: ",
+  },
   "show-all": {
     "en": "All",
     "zh": "全部",
@@ -40,6 +46,24 @@ let l10n = {
     "zh": "未選",
     "de": "Nicht ausgewählt",
     "it": "Non selezionati",
+  },
+  "toggle-cd": {
+    "en": "Community Day",
+    "zh": "",
+    "de": "Kommunity Tag",
+    "it": "",
+  },
+  "toggle-rd": {
+    "en": "Raid/Research Day",
+    "zh": "",
+    "de": "Raid/Research Tag",
+    "it": "",
+  },
+  "toggle-sz": {
+    "en": "Safari Zone",
+    "zh": "",
+    "de": "Safari Zone",
+    "it": "",
   },
   "share-shiny-list": {
     "en": "Share shiny list",
@@ -60,7 +84,7 @@ let l10n = {
     "it": "Condividi tramite URL veloce",
   },
   "owns": {
-    "en": "Owns",
+    "en": "Owned",
     "zh": "現有",
     "de": "Besitzt",
     "it": "Posseduti",
@@ -72,7 +96,7 @@ let l10n = {
     "it": "Registrati",
   },
   "released": {
-    "en": "released",
+    "en": "Released",
     "zh": "已釋出",
     "de": "veröffentlicht",
     "it": "Rilasciati",

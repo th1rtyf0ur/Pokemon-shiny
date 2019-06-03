@@ -35,8 +35,6 @@
       <div class="counter">
         <span class="counter-owns" data-number="0" data-l10n="owns">owns</span>
         /
-        <span class="counter-registered" data-number="0" data-l10n="registered">regsistered</span>
-        /
         <span class="counter-total" data-number="0" data-l10n="released">released</span>
       </div>
       <div class="update">update: 2019-05-31</div>
@@ -47,8 +45,11 @@
     <input type="radio" name="show-switcher" value="show-all" id="show-all" class="sr-only" checked />
     <input type="radio" name="show-switcher" value="show-selected" id="show-selected" class="sr-only" />
     <input type="radio" name="show-switcher" value="show-unselected" id="show-unselected" class="sr-only" />
+    <input type="checkbox" name="toggle-switcher" value="toggle-cd" id="toggle-cd" class="sr-only" checked />
+    <input type="checkbox" name="toggle-switcher" value="toggle-rd" id="toggle-rd" class="sr-only" checked />
+    <input type="checkbox" name="toggle-switcher" value="toggle-sz" id="toggle-sz" class="sr-only" checked />
 
-    <aside class="ctrl-1">
+    <aside class="ctrl-1" id="navbar">
       <a href="###" class="select-all click-link" data-l10n="select-all">Select All</a>
       /
       <a href="./" class="reset click-link" data-l10n="reset">Reset</a>
@@ -59,6 +60,14 @@
         <label for="show-selected" data-l10n="show-selected">selected</label>/
         <label for="show-unselected" data-l10n="show-unselected">unselected</label>
       </div>
+	  <br>
+      <div class="ctrl-toggle">
+        <span data-l10n="toggle">Toggle Boosted: </span>
+        <label for="toggle-cd" data-l10n="toggle-cd">Community Day</label>/
+        <label for="toggle-rd" data-l10n="toggle-rd">Research Day</label>/
+        <label for="toggle-sz" data-l10n="toggle-sz">Safari Zone</label>
+	  </div>
+	  <br>
     </aside>
 
     <main class="pm-checklist"></main>

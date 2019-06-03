@@ -54,7 +54,7 @@ $space-y: 8px;
   }
 }
 
-.ctrl-show {
+.ctrl-show, .ctrl-toggle {
   label {
     padding: 5px 10px 5px;
     color: #aaa;
@@ -64,7 +64,11 @@ $space-y: 8px;
 
 #show-all:checked ~ .ctrl-1 label[for="show-all"],
 #show-selected:checked ~ .ctrl-1 label[for="show-selected"],
-#show-unselected:checked ~ .ctrl-1 label[for="show-unselected"] {
+#show-unselected:checked ~ .ctrl-1 label[for="show-unselected"] 
+#toggle-cd:checked ~ .ctrl-1 label[for="toggle-cd"],
+#toggle-rd:checked ~ .ctrl-1 label[for="toggle-rd"],
+#toggle-sz:checked ~ .ctrl-1 label[for="toggle-sz"],
+{
   color: #9c27b0;
   border-bottom: 1px dashed;
 }
@@ -274,6 +278,20 @@ button {
 
 .ctrl-1 {
   margin-bottom: 3em;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: block;
+  background-color: #f4efff;
+  border-bottom: 2px solid black;
+  z-index: 5;
+}
+
+.sticky + main {
+  padding-top: 80px;
 }
 
 .share {

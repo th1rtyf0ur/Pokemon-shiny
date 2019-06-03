@@ -112,6 +112,9 @@ let html = Object.values(pmsByFamily)
       if (!pm.shiny_released) { return; }
       let name = getName(pm.name);
       imgHandler(pm);
+	  let stype = (cd.indexOf(pm.id) !== -1) ? 'cd'
+		: (rd.indexOf(pm.id) !== -1) ? 'rd'
+		: (sz.indexOf(pm.id) !== -1) ? 'sz' : '';
       return (
         `
         <input
@@ -120,6 +123,7 @@ let html = Object.values(pmsByFamily)
           data-dex="${pm.dex}"
           data-id="${pm.id}"
           id="pm-${pm.id}"
+		  data-stype="${stype}"
         />
         <label
           class="pm"
@@ -129,9 +133,8 @@ let html = Object.values(pmsByFamily)
           <div class="pm-info"
             data-dex="${pm.dex}"
             data-id="${pm.id}"
-            style="
-              --bgi: var(--bgi--${pm.id});
-              --bgi-n: var(--bgi--${pm.id}-n);"
+			data-name="${name}"
+            style="background-image: url(${getImgUrl(pm)});"
           >
             <div class="pm-name">${name}</div>
             <div class="pm-mark"></div>
@@ -178,10 +181,10 @@ const checkboxState = {
     indeterminate: false,
     checked: false,
   },
-  'registered': {
-    indeterminate: true,
-    checked: true,
-  },
+//  'registered': {
+//    indeterminate: true,
+//    checked: true,
+//  },
   'own': {
     indeterminate: false,
     checked: true,
@@ -190,9 +193,13 @@ const checkboxState = {
 };
 
 const nextState = {
+  'none': 'own',
+  'own': 'none',
+  /*
   'none': 'registered',
   'registered': 'own',
   'own': 'none',
+  */
 };
 
 function updateCheckboxState(checkbox, newState) {
@@ -225,20 +232,20 @@ elm.nickname.addEventListener('input', (e) => {
 
 
 document.querySelector('.counter-total').dataset.number = pmData.size;
-elm.registered = document.querySelector('.counter-registered');
+//elm.registered = document.querySelector('.counter-registered');
 elm.owns = document.querySelector('.counter-owns');
 
 elm.header = document.querySelector('.header');
 function updateShinyCounter() {
   let own = getOwnIndexArr().length;
-  let registeredOnly = getRegisteredOnlyIndexArr().length;
-  let registered = registeredOnly + own;
+//  let registeredOnly = getRegisteredOnlyIndexArr().length;
+//  let registered = registeredOnly + own;
 
   elm.header.style.setProperty('--rate-owns', own / pmData.size);
-  elm.header.style.setProperty('--rate-registered', registered / pmData.size);
+//  elm.header.style.setProperty('--rate-registered', registered / pmData.size);
 
   elm.owns.dataset.number = own;
-  elm.registered.dataset.number = registered;
+//  elm.registered.dataset.number = registered;
 }
 
 
@@ -250,9 +257,9 @@ function getOwnIndexArr(_map) {
   return getIndexArr([...(_map || pmData).entries()], 'own');
 }
 
-function getRegisteredOnlyIndexArr(_map) {
-  return getIndexArr([...(_map || pmData).entries()], 'registered');
-}
+//function getRegisteredOnlyIndexArr(_map) {
+//  return getIndexArr([...(_map || pmData).entries()], 'registered');
+//}
 
 function sortByNumber(a, b) {
   return a - b;
@@ -270,14 +277,17 @@ function deleteEmptyProperty(obj) {
 let splitChar = '-';
 function updateState() {
   let ownArray = getOwnIndexArr();
-  let registeredArray = getRegisteredOnlyIndexArr().concat(ownArray).sort(sortByNumber);
+//  let registeredArray = getRegisteredOnlyIndexArr().concat(ownArray).sort(sortByNumber);
   let show = document.querySelector('[name="show-switcher"]:checked').value.split('-')[1];
+  let toggle = []
+  document.querySelectorAll('[name="toggle-switcher"]:checked').forEach((item) => {toggle.push( item.value.split('-')[1] )}); //.value.split('-')[1];
 
   let para = new URLSearchParams(deleteEmptyProperty({
     nickname: nickname() || '',
     own: ownArray.join(splitChar),
-    dex: registeredArray.join(splitChar),
+//    dex: registeredArray.join(splitChar),
     show: show,
+    toggle: toggle,
   }));
 
   history.pushState(null, null, `./#${para.toString()}`);
@@ -296,8 +306,9 @@ function renderState() {
   nickname(para.get('nickname'));
 
   let ownDex = (para.get('own') || '').split(splitChar);
-  let registeredDex = (para.get('dex') || '').split(splitChar);
+//  let registeredDex = (para.get('dex') || '').split(splitChar);
   let show = (para.get('show') || '');
+  let toggle = (para.get('toggle') || '');
   let showTarget = document.querySelector(`#show-${show}`);
   if (showTarget) {
     document.querySelector(`#show-${show}`).checked = true
@@ -305,9 +316,9 @@ function renderState() {
 
   pmData.forEach((i) => {
     let isOwn = (ownDex.indexOf(i.id) !== -1);
-    let isRegistered = (registeredDex.indexOf(i.id) !== -1);
+//    let isRegistered = (registeredDex.indexOf(i.id) !== -1);
 
-    i.state = !isRegistered ? 'none' : ( isOwn ? 'own' : 'registered' );
+    i.state =  isOwn ? 'own' : 'none' ;
 
     updateCheckboxState(i.checkbox, i.state);
   });
@@ -319,11 +330,11 @@ function renderState() {
 
 function getImgUrl(pm, normal) {
   let pokedex = `${pm.dex}`.padStart(3, '0');
-  let imgBasePath = 'raw.githubusercontent.com/ZeChrales/PogoAssets/master/pokemon_icons/pokemon_icon_';
+  let imgBasePath = 'pokemon_icons/pokemon_icon_';
   let number = `${pokedex}${pm.type || '_00'}${pm.isotope || ''}`;
   let shiny = normal ? '' : '_shiny';
 
-  return `//images.weserv.nl/?w=200&il&url=${imgBasePath}${number}${shiny}.png${pm.cachebuster || ''}`;
+  return `${imgBasePath}${number}${shiny}.png${pm.cachebuster || ''}`;
 }
 
 
@@ -333,7 +344,7 @@ elm.share.addEventListener('click', (e) => {
   shareLink();
 });
 
-function toggleFectingClass() {
+function toggleFetchingClass() {
   elm.getShortUrl.classList.toggle('is-fetching');
 }
 
@@ -349,14 +360,14 @@ elm.getShortUrl.addEventListener('click', (e) => {
     return;
   }
 
-  toggleFectingClass();
+  toggleFetchingClass();
   getShortedUrl()
   .then(d => {
-    toggleFectingClass();
+    toggleFetchingClass();
     elm.getShortUrl.href = d;
   })
   .catch(() => {
-    toggleFectingClass();
+    toggleFetchingClass();
   });
 });
 
@@ -394,7 +405,8 @@ elm.selectAll.addEventListener('click', (e) => {
 
   pmData.forEach(pm => {
     if (targetState) {
-      pm.state = (pm.state === 'none') ? 'registered' : pm.state;
+//      pm.state = (pm.state === 'none') ? 'registered' : pm.state;
+      pm.state = pm.state;
     } else {
       pm.state = 'none';
     }
@@ -426,6 +438,9 @@ elm.reset.addEventListener('click', (e) => {
 
 
 [...document.querySelectorAll('[name="show-switcher"]')].forEach(e => {
+  e.addEventListener('change', updateState);
+});
+[...document.querySelectorAll('[name="toggle-switcher"]')].forEach(e => {
   e.addEventListener('change', updateState);
 });
 
@@ -518,3 +533,20 @@ elm.fbLikeDetails.addEventListener('toggle', () => {
   elm.fbLikeDetails.init = true;
 });
 
+// When the user scrolls the page, execute myFunction
+window.onscroll = function() {stickyNavbar()};
+
+// Get the navbar
+var navbar = document.getElementById("navbar");
+
+// Get the offset position of the navbar
+var sticky = navbar.offsetTop;
+
+// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function stickyNavbar() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}

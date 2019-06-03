@@ -43,14 +43,22 @@
 #show-unselected:checked ~ .pm-checklist .pm-checkbox:checked + .pm {
   display: none; }
 
-.ctrl-show label {
+#toggle-cd:not(:checked) ~ .pm-checklist .pm-checkbox[data-stype="cd"] + .pm { display: none; }
+#toggle-rd:not(:checked) ~ .pm-checklist .pm-checkbox[data-stype="rd"] + .pm { display: none; }
+#toggle-sz:not(:checked) ~ .pm-checklist .pm-checkbox[data-stype="sz"] + .pm { display: none; }
+
+.ctrl-show label, .ctrl-toggle label {
   padding: 5px 10px 5px;
   color: #aaa;
   cursor: pointer; }
 
 #show-all:checked ~ .ctrl-1 label[for="show-all"],
 #show-selected:checked ~ .ctrl-1 label[for="show-selected"],
-#show-unselected:checked ~ .ctrl-1 label[for="show-unselected"] {
+#show-unselected:checked ~ .ctrl-1 label[for="show-unselected"]
+#toggle-cd:checked ~ .ctrl-1 label[for="toggle-cd"],
+#toggle-rd:checked ~ .ctrl-1 label[for="toggle-rd"],
+#toggle-sz:checked ~ .ctrl-1 label[for="toggle-sz"],
+{
   color: #9c27b0;
   border-bottom: 1px dashed; }
 
@@ -208,7 +216,21 @@ button {
   text-align: right; }
 
 .ctrl-1 {
-  margin-bottom: 3em; }
+  margin-bottom: 3em; overflow: hidden; }
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: block;
+  background-color: #f4efff;
+  z-index: 5;
+  border-bottom: 2px solid black;
+}
+
+.sticky + main {
+  padding-top: 80px;
+}
 
 .share::after {
   font-family: monospace;
@@ -2147,7 +2169,7 @@ body.print .pm-checkbox:not(:checked) + .pm-info {
 
 body {
   text-align: center;
-  background-color: #fff4fa;
+  background-color: #f4efff;
   overflow-y: scroll; }
 
 .sr-only {
